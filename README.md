@@ -63,3 +63,39 @@ Combining all the elements together, the regular expression `\$\d*\.\d{2}` looks
 `[a-z]` search every lowercase letter
 `[0-9]` search any # of numbers
 
+
+## Regex in Js
+
+JavaScript has multiple ways to use regexes. One way to test a regex is using the  `.test()`  method. The  `.test()`  method takes the regex, applies it to a string (which is placed inside the parentheses), and returns  `true`  or  `false`  if your pattern finds something or not.
+
+```js
+let testStr = "freeCodeCamp";
+let testRegex = /Code/;
+testRegex.test(testStr);
+
+```
+
+The  `test`  method here returns  `true`.
+
+
+## create a negated charecter set
+
+To create a negated character set, you place a caret character (`^`) after the opening bracket and before the characters you do not want to match.
+
+For example,  `/[^aeiou]/gi`  matches all characters that are not a vowel. Note that characters like  `.`,  `!`,  `[`,  `@`,  `/`  and white space are matched - the negated vowel character set only excludes the vowel characters.
+
+> note: when `^` is used outisde a set, it is used to match the beginning of a string.
+
+Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+
+```js
+let firstString = "Ricky is first and can be found.";
+let firstRegex = /^Ricky/;
+firstRegex.test(firstString);
+let notFirst = "You can't find Ricky now.";
+firstRegex.test(notFirst);
+
+```
+
+The first  `test`  call would return  `true`, while the second would return  `false`.
+
