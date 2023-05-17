@@ -99,3 +99,57 @@ firstRegex.test(notFirst);
 
 The first  `test`  call would return  `true`, while the second would return  `false`.
 
+## Testing regex in JS
+
+In JavaScript, the `test()` and `match()` functions are used for pattern matching with regular expressions. Here's a brief overview of their syntax and usage:
+
+1.  `test()` function:
+    
+    -   Syntax: `regex.test(str)`
+    -   Description: Tests whether a pattern (regular expression) matches a given string. It returns a boolean value (`true` or `false`) indicating whether the pattern is found in the string or not.
+    -   Parameters:
+        -   `regex` (regular expression): The pattern to match against the string.
+        -   `str` (string): The string to test against the pattern.
+    -   Example:
+        
+        javascriptCopy code
+        
+        `const regex = /hello/;
+        const str = 'Hello, world!';
+        
+        console.log(regex.test(str)); // Output: false` 
+        
+2.  `match()` function:
+    
+    -   Syntax: `str.match(regex)`
+    -   Description: Searches a string for a pattern (regular expression) and returns an array of matches. If no matches are found, it returns `null`.
+    -   Parameters:
+        -   `str` (string): The string to search for matches.
+        -   `regex` (regular expression): The pattern to match against the string.
+    -   Example:
+        
+        javascriptCopy code
+        
+        `const regex = /\d+/;
+        const str = 'Hello, 123 world!';
+        
+        console.log(str.match(regex)); // Output: ['123']` 
+        
+
+Both `test()` and `match()` functions are commonly used in JavaScript for pattern matching and working with regular expressions. The `test()` function is primarily used to check if a pattern exists in a string, while the `match()` function is used to extract matching substrings from a string.
+
+## search end of the strings
+
+You can search the end of strings using the dollar sign character  `$`  at the end of the regex.
+
+```js
+let theEnding = "This is a never ending story";
+let storyRegex = /story$/;
+storyRegex.test(theEnding);
+let noEnding = "Sometimes a story will have to end";
+storyRegex.test(noEnding);
+
+```
+
+The first  `test`  call would return  `true`, while the second would return  `false`.
+
